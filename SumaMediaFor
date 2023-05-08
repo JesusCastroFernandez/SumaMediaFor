@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class SumaMediaFor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Introduce la cantidad de intentos: ");
+        int intentos = sc.nextInt();
+        int totalNumeros = 0;
+        int suma = 0;
+        for (int i = 1; i <= intentos; i++) {
+            System.out.print("Introduce un número entero no negativo: ");
+            int numero = sc.nextInt();
+            if (numero >= 0) {
+                totalNumeros++;
+                suma += numero;
+            }
+        }
+        sc.close();
+        System.out.println("Se han realizado " + intentos + " intentos.");
+        System.out.println("Se han leído " + totalNumeros + " números no negativos.");
+        System.out.println("La suma de los números no negativos es: " + suma);
+        if (totalNumeros > 0) {
+            double media = (double) suma / totalNumeros;
+            System.out.println("La media aritmética de los números no negativos es: " + media);
+        } else {
+            System.out.println("No se ha leído ningún número no negativo.");
+        }
+    }
+}
